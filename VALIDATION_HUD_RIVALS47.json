@@ -1,0 +1,49 @@
+{
+  "release": "1.13",
+  "native_client": 47,
+  "server_sha256": "75a83567b95eebc7e61f23f223744b0ae5064911c754df73587865423ba051bc",
+  "modes": {
+    "standard": "649310b24251f2c999ecc3fa8dcdc9b31ab7d86b841d880011d249b3cd59d50c",
+    "growth8": "6ce331e6772abc3ab01262d44fc702fd7e861b0a8655392aafecf796e54c5241"
+  },
+  "tests": {
+    "HUD47_NATIVE": {
+      "stale_render_copy_excluded": true,
+      "native_displayed_hud_updates": 1008,
+      "all_combat_maps": 84,
+      "rewards_unchanged": true,
+      "actual_vita3k_verified": false
+    },
+    "RIVALS47_NATIVE": {
+      "native_troop_decodes": 80,
+      "native_runtime_skill_slots": 1028,
+      "native_cosmetic_drops": 160,
+      "actual_vita3k_verified": false,
+      "native_victory_collection_and_save_awards": 2,
+      "native_cosmetic_inventory_awards": 78,
+      "cosmetic_save_ownership_stubbed": false,
+      "original_npc_skill_provenance_verified": true
+    },
+    "SECRET46_NATIVE": {
+      "native_gate_cases": 2574,
+      "original_defeat_threshold": 10,
+      "live_campaign_collection_verified": false
+    },
+    "REGRESSION45": {
+      "recipes": 40,
+      "contract_cases": 180,
+      "native_rank_callbacks": 14,
+      "native_population_cases": 96,
+      "native_siege_hp_cases": 4,
+      "actual_vita3k_verified": false
+    },
+    "server_tests": {
+      "default_go_suite": "passed",
+      "owner_self_focused_rivals_secret_protocol": "passed",
+      "linux_selftest": "passed",
+      "all_owner_self_protocol_tests": "not completed: legacy private captures missing",
+      "windows_launcher_executed": false,
+      "live_vita3k_executed": false
+    }
+  }
+}
