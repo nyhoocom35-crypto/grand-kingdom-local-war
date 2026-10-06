@@ -1,9 +1,57 @@
 Server: Go 1.23+, cd server, go test ./...
 Win64: GOOS=windows GOARCH=amd64 go build -buildvcs=false -trimpath -ldflags "-s -w" -o GK_Server_29.exe .
-Release1.5 native client38: positive own-operation merit x3, retaining client34 EXP3 and optional own-roster growth8.
+Release1.6 native client38: positive own-operation merit x3, retaining client34 EXP3 and optional own-roster growth8.
 Server retains base29/display33/dispatch35/orders36 and adds Finish37 deadline + normal native operation termination.
 Unserved terminal replies are kept across campaigns and restarts. Served terminal results are pruned when the originating campaign is more than eight campaigns old.
 Every map uses the same completion path. No speculative API33 coordinate changes.
 Native helper hooks only the first four nonrelocated bytes of each original adder; original relocation/import tables and caps are preserved.
 Frame/native tests require authorized game binaries, parameters and captures; these private inputs are not included.
 Windows installer runtime, real Vita3K and reward UI/grant were not available in the validation environment.
+
+Server-only Research39/Siege40: one-time category research reset, four-country category simulation, native national shop counts, five victories destroy map structures. Native client38 recipes are unchanged.
+New native replay: go test -run TestResearchSiege40ReplayFixtures with GK_RESEARCH40_FIXTURE_DIR; python verify_research_siege40.py OWN_SELF FIXTURE_DIR OWN_RESEARCHPARAMETER_DAT. RNG and ownership are stubbed only in the inventory replay.
+
+Shop41: build_shop41.py OWN_DECRYPTED_SELF RELEASE38_BUILD_INPUT.json OUTPUT_DIR
+keystone-engine required. No game binary is distributed.
+verify_shop41.py OWN_CLIENT41_SELF OWN_RESEARCHPARAMETER_DAT FIXTURE_DIR
+Unicorn required. Native handlers, save-country stock and original shop category
+creation are replayed; RNG sampling deterministic; actual Vita3K graphics pending.
+
+Release1.8 / Shop42 supersedes unsafe Shop41 executable-state storage.
+build_shop42.py OWN_SELF RELEASE38_BUILD_INPUT.json OUTPUT_DIR
+RELEASE41_BUILD_INPUT.json supplies verified 1.7 upgrade sources.
+The appended RW BSS holds 80 bytes; all original global addresses preserved.
+verify_shop41.py supports --real-rng --no-code-writes --capture PRIVATE_PLAIN_REPLY.
+Native RNG executes; heap/OS services modeled; actual Vita3K confirmation pending.
+
+Release1.9 / Shop43 supersedes Shop41/42.
+build_shop43.py OWN_SELF RELEASE38_BUILD_INPUT.json OUTPUT_DIR
+The inherited ThumbMovw relocation at 8108b972 is disabled; its paired
+ThumbMovt at 8108b976 and every unrelated relocation remain unchanged.
+verify_shop41.py --relocated applies SELF segment relocation streams before
+executing native snapshot, RNG, research and shop-category paths.
+Client42 demonstrably fetches unmapped 80094b74 after loader relocation.
+Client43 retains BL 81497d50 and RW BSS state. Actual Vita3K remains pending.
+
+Release1.10 / Vote transition44 is a server-only fix; native43 recipes unchanged.
+Advertised vote deadlines are saved in vote_deadlines44 and retained across
+AI rounds. Removing operation history also removes its cached deadline.
+GetNow/GetStrategy snapshot writes persist before the response; failed durable
+write returns an error and restores prior deadlines.
+Tests: TestVote44AdvertisementSurvivesRoundAndRestart,
+TestVote44All84MapsRetainDeadlineAndResolve,
+TestVote44SnapshotWriteFailureRollsBackDeadline.
+
+Release1.12 / HUD46, Rivals46, Secret46.
+Build client: build_hud46.py OWN_SELF RELEASE45_BUILD_INPUT.json OUTPUT_DIR
+Native client46 only changes building HUD sites; all prior reward/XP/merit code retained.
+GetRivalTroop supplies20 serialized AI rivals plus10 original NPC fallback rows.
+The30 rows are an enemy candidate pool, not simultaneous visible deployment slots.
+AI contracts follow requested enemy country; native classes/appearance/equipment IDs.
+Native flags/pieces use original drop chance and existing owned-item exclusion.
+Secret reward IDs are original country reward items; original10 repulsion/nation/result gate retained.
+verify_hud46.py CLIENT46_DIR CLIENT45_DIR
+verify_rivals46.py CLIENT46_SELF CLIENT46_FIXTURES OWNER_PARAMETER_DIR
+verify_secret46.py CLIENT46_SELF OWNER_WARBONUS_DAT
+Unicorn tests model OS/stream services; cosmetic loot replay models RNG and ownership.
+Real Vita3K rendering, combat, victory inventory save and campaign reward collection pending.
