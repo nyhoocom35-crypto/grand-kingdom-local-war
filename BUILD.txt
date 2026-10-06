@@ -1,0 +1,9 @@
+Server: Go 1.23+, cd server, go test ./...
+Win64: GOOS=windows GOARCH=amd64 go build -buildvcs=false -trimpath -ldflags "-s -w" -o GK_Server_29.exe .
+Release1.5 native client38: positive own-operation merit x3, retaining client34 EXP3 and optional own-roster growth8.
+Server retains base29/display33/dispatch35/orders36 and adds Finish37 deadline + normal native operation termination.
+Unserved terminal replies are kept across campaigns and restarts. Served terminal results are pruned when the originating campaign is more than eight campaigns old.
+Every map uses the same completion path. No speculative API33 coordinate changes.
+Native helper hooks only the first four nonrelocated bytes of each original adder; original relocation/import tables and caps are preserved.
+Frame/native tests require authorized game binaries, parameters and captures; these private inputs are not included.
+Windows installer runtime, real Vita3K and reward UI/grant were not available in the validation environment.
